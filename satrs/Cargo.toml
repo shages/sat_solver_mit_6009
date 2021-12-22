@@ -1,0 +1,13 @@
+[package]
+name = "satrs"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "satrs"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.15.1", features = ["extension-module"] }
+varisat = "0.2.2"

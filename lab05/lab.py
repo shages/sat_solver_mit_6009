@@ -10,6 +10,7 @@ sys.setrecursionlimit(10000)
 from itertools import product, combinations
 import math
 from collections import defaultdict
+import satrs
 
 Literal = tuple[str, bool]
 Clause = list[Literal]
@@ -149,7 +150,8 @@ def satisfying_assignment(formula: list[list[tuple[str, bool]]]):
     """
     # ensure type is list[list[tuple]]
     trans = [[(a, b) for a, b in c] for c in formula]
-    return _satisfying_assignment(trans)
+    # return _satisfying_assignment(trans)
+    return satrs.sat(trans)
 
 
 def boolify_scheduling_problem(student_preferences, room_capacities):
